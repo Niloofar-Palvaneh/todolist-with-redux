@@ -1,0 +1,107 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    background: #4f43b6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.add-todo-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.add-icon {
+    background-color: rgb(73, 186, 63);
+    color: #fff;
+    border-radius: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.add-todo-input,
+.filter-todo {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 22px;
+    border-bottom: 2px solid rgb(73, 186, 63);
+    border-radius: 5px;
+}
+
+.filter-todo {
+    font-size: 18px;
+}
+
+.todo-items {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.todo-item {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px solid green;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.todo-title {
+    font-size: 20px;
+}
+
+.icon {
+    width: 30px;
+    color: #fff;
+}
+
+.complete-icon {
+    background-color: #43b654;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.remove-icon {
+    background-color: #959494;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.completedTodo{
+    background-color: rgba(205, 147, 147, 0.389);
+    opacity: .5;
+}

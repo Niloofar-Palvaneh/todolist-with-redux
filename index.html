@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>TODO LIST</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header-title">
+            Todo List App
+        </h1>
+        <div class="add-todo-section">
+            <input class="add-todo-input" type="text" placeholder="write todo...">
+            <div class="icon add-icon">
+                <svg  fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                </svg>
+            </div>
+            <div class="select">
+                <select name="todos" class="filter-todo">
+                    <option value="All">All</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Uncompleted">Uncompleted</option>
+                </select>
+            </div>
+        </div>
+        <div class="todo-items">
+            <!-- get from store -->
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"></script>
+    <script src="./app.js" type="module"></script>
+</body>
+
+</html>
