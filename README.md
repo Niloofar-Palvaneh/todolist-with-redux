@@ -2,6 +2,8 @@
   Todo list (Redux)
 </h1>
 <hr/>
+ui will be updated
+<hr/>
 Demo on Vercel 👉: 
 <br/>
 (https://todolist-with-redux.vercel.app/)
