@@ -1,17 +1,21 @@
-import { addTodo, removeTodo, completTodo, filterAllTodos, filterCompletedTodos, filterUnCompletedTodos }
+import { addTodo, removeTodo, completTodo, getAllTodos }
     from "./Redux/actionTypes.js";
-import { addTodoAction, removeTodoAction, completTodoAction, filterAllTodosAction, filterCompletedTodosAction, filterUnCompletedTodosAction }
+import { addTodoAction, removeTodoAction, completTodoAction, getAllTodosAction }
     from "./Redux/actionCreator.js";
 
 let inputElem = document.querySelector(".add-todo-input")
 let addTodoElem = document.querySelector(".add-icon")
-
 let todosContainer = document.querySelector(".todo-items")
+let filterTodoElem = document.querySelector(".filter-todo")
+
 window.removeTodoHandler = removeTodoHandler
 window.completedTodoHandler = completedTodoHandler
 
 function reduser(state = [], action) {
     switch (action.type) {
+        case getAllTodos: {
+            return state
+        }
         case addTodo: {
             let newState = [...state]
             let newTodo = {
@@ -29,21 +33,12 @@ function reduser(state = [], action) {
         }
         case completTodo: {
             let copyState = [...state]
-            copyState.some(todo =>{
-                if(todo.id === action.id){
+            copyState.some(todo => {
+                if (todo.id === action.id) {
                     todo.isCompleted = !todo.isCompleted
                 }
             })
             return copyState
-        }
-        case filterAllTodos: {
-
-        }
-        case filterCompletedTodos: {
-
-        }
-        case filterUnCompletedTodos: {
-
         }
         default: {
             return state
@@ -71,6 +66,25 @@ function completedTodoHandler(id) {
     let todos = store.getState()
     gnerateTodosInDom(todos)
 }
+
+
+filterTodoElem.addEventListener("change", (event) => {
+    if (event.target.value == "Completed") {
+        let todos = store.getState()
+        store.dispatch(getAllTodosAction(todos))
+        todos = todos.filter(todo => todo.isCompleted === true)
+        gnerateTodosInDom(todos)
+    } else if (event.target.value == "Uncompleted") {
+        let todos = store.getState()
+        store.dispatch(getAllTodosAction(todos))
+        todos = todos.filter(todo => todo.isCompleted === false)
+        gnerateTodosInDom(todos)
+    } else if (event.target.value == "All") {
+        let todos = store.getState()
+        store.dispatch(getAllTodosAction(todos))
+        gnerateTodosInDom(todos)
+    }
+})
 
 const store = Redux.createStore(reduser)
 
